@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MovieContext } from "../context/MovieContext";
+import Card from "./Card";
 
 function ResultSectionMovies(){
     const {movies}= useContext(MovieContext);
@@ -11,8 +12,7 @@ function ResultSectionMovies(){
             <div>
                 {movies.map((movie)=>(
                     <div key={movie.id}>
-                        <h4>{movie.title}</h4>
-                        <p>{movie.vote_average}</p>
+                        <Card item={movie}/>
                     </div>
                 ))}
             </div>

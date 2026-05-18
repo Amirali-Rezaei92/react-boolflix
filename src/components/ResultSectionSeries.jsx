@@ -11,8 +11,7 @@ function ResultSectionSeries(){
             <div>
                 {series.map((serie)=>(
                     <div key={serie.id}>
-                        <h4>{serie.name}</h4>
-                        <p>{serie.vote_average}</p>
+                        <Card item={serie}/>
                     </div>
                 ))}
             </div>
