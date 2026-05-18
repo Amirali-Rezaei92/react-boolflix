@@ -1,4 +1,4 @@
-export function getFlag(lang) {
+function getFlag(lang) {
     const flags = {
         en: "🇬🇧",
         it: "🇮🇹",
@@ -12,3 +12,4 @@ export function getFlag(lang) {
 
     return flags[lang] || "🏳️";
 }
+export default getFlag;
