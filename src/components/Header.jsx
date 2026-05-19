@@ -3,7 +3,7 @@
 function Header() {
     return (
         <nav>
-            amirali
+            Header
         </nav>
     )
 }

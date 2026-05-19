@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { API_KEY, BASE_URL } from "../services/tmdb";
+import { searchMovies, searchTvShows } from "../utils/tmdb";
 
 export const MovieContext = createContext();
 
@@ -8,26 +8,20 @@ export function MovieProvider({ children }) {
     const [series, setSeries] = useState([]);
     const [searchText, setSearchText] = useState("");
 
-    const searchMovie = () => {
+    const handleSearch = () => {
         if (!searchText.trim()) return;
 
-        fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${searchText}`)
-            .then(res => res.json())
-            .then(data => {
-                setMovies(data.results || []);
+        searchMovies(searchText)
+            .then((movieData) => {
+                setMovies(movieData.results || []);
             })
-            .catch(err => console.error("Error fetching movies:", err));
-    };
+            .catch((err) => console.error("Movie error:", err));
 
-    const searchSeries = () => {
-        if (!searchText.trim()) return;
-
-        fetch(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${searchText}`)
-            .then(res => res.json())
-            .then(data => {
-                setSeries(data.results || []);
+        searchTvShows(searchText)
+            .then((seriesData) => {
+                setSeries(seriesData.results || []);
             })
-            .catch(err => console.error("Error fetching series:", err));
+            .catch((err) => console.error("Series error:", err));
     };
 
     return (
@@ -37,8 +31,7 @@ export function MovieProvider({ children }) {
                 series,
                 searchText,
                 setSearchText,
-                searchMovie,
-                searchSeries,
+                handleSearch,
             }}
         >
             {children}

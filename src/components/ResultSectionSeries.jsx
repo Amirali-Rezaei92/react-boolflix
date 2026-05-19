@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MovieContext } from "../context/MovieContext";
+import Card from "./Card";
 
 function ResultSectionSeries(){
     const {series}= useContext(MovieContext);

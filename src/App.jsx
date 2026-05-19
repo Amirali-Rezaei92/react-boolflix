@@ -1,16 +1,21 @@
+import { Routes, Route } from "react-router-dom";
 import { MovieProvider } from "./context/MovieContext";
-import ResultSectionMovies from "./components/ResultSectionMovies";
-import ResultSectionSeries from "./components/ResultSectionSeries";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
+
+import Layout from "./layout/Layout";
+import Home from "./pages/Home";
+import Details from "./pages/Details";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <MovieProvider>
-      <Header />
-      <SearchBar />
-      <ResultSectionMovies />
-      <ResultSectionSeries/>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="detail/:id" element={<Details />} />
+          <Route path="*" element={< NotFound />} />
+        </Route>
+      </Routes>
     </MovieProvider>
   );
 }

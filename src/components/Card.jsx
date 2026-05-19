@@ -1,4 +1,4 @@
-import { getFlag } from "../utils/getFlag";
+import  getFlag  from "../utils/getFlag";
 import GetPosterUrl from "../utils/getPosterUrl";
 import getStars from "../utils/getStars";
 
