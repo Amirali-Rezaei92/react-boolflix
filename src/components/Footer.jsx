@@ -1,7 +1,7 @@
 
 function Footer() {
     return (
-        <div>Footer</div>
+        <p className="text-center text-secondary">Made by Amirali 2026</p>
     )
 }
 

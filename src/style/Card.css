@@ -1,0 +1,24 @@
+.backGround {
+    background-color: rgba(171, 3, 20, 0.58) !important;
+    flex: 0 0 calc(33.33% - 20px);
+    min-width: 250px !important;
+    max-width: 300px !important;
+    min-height: 600px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.heightSize {
+    height: 220px;
+}
+.heightH4 {
+    height: 50px;
+}
+.btn-custom{
+    background-color: brown !important;
+}
+card {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}

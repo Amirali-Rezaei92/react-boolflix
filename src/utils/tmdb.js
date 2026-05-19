@@ -45,5 +45,14 @@ const searchTvShows = (query) => {
 
     return fetchFromTMDB(`/search/tv?${params}`);
 };
+const getMovieCast = (id) => {
+    return fetchFromTMDB(`/movie/${id}/credits`);
+};
 
-export { getImageUrl, searchMovies, searchTvShows };
+const getSeriesCast = (id) => {
+    return fetchFromTMDB(`/tv/${id}/credits`);
+};
+
+
+export { getImageUrl, searchMovies, searchTvShows ,getMovieCast , getSeriesCast , fetchFromTMDB};
+
