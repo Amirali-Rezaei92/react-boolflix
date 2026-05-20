@@ -8,7 +8,7 @@ function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <img src="src/media/Netflix_icon.svg" alt="logo"  />
+                <img src="src/media/Copilot_20260520_102043.PNG" alt="logo"  />
             </div>
 
             
